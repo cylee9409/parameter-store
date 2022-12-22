@@ -7,19 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
-
-	@Value("${spring.mysql.km0.username}")
-	private static String value;
-
-	@Value("${test.key}")
-	private static String key;
-
 	public static void main(String[] args) {
 		System.out.println("DemoApplication Start");
-		
-		System.out.println(value);
-		System.out.println(key);
-
+		ParameterStoreTest test = new ParameterStoreTest();
+		test.printProperties();
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
